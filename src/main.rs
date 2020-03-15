@@ -44,6 +44,13 @@ fn main() {
                 .help("Disable JSON digests for listing articles on pages.")
         )
         .arg(
+            Arg::with_name("no-gfm")
+            .takes_value(false)
+            .long("no-gfm")
+            .short("G")
+            .help("Disable Github-flavored markdown.")
+        )
+        .arg(
             Arg::with_name("output")
                 .required(true)
                 .takes_value(true)
@@ -119,7 +126,14 @@ fn main() {
                     let adjusted_path = Path::new(output).join(relative_path.clone());
                     let adjusted_path_directory = adjusted_path.parent().expect("Failed to get article's directory.");
 
-                    let mdc_opts = pulldown_cmark::Options::empty();
+                    let mut mdc_opts = pulldown_cmark::Options::empty();
+
+                    if matches.value_of("--no-gfm").is_none() {
+                        mdc_opts.insert(pulldown_cmark::Options::ENABLE_TABLES);
+                        mdc_opts.insert(pulldown_cmark::Options::ENABLE_STRIKETHROUGH);
+                        mdc_opts.insert(pulldown_cmark::Options::ENABLE_TASKLISTS);
+                    }
+
                     let mdc_parser = pulldown_cmark::Parser::new_ext(&markdown, mdc_opts);
 
                     let mut article = String::new();
