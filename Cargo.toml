@@ -1,0 +1,13 @@
+[package]
+name = "marksman"
+version = "0.1.0"
+authors = ["Jamen Marz <me@jamen.dev>"]
+edition = "2018"
+
+[dependencies]
+clap = "2.33.0"
+serde_json = "1.0.48"
+serde_yaml = "0.8.11"
+pulldown-cmark = "0.7.0"
+handlebars = "3.0.1"
+nom = "5.1.1"
