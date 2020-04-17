@@ -9,7 +9,7 @@ use handlebars::Handlebars;
 use serde_json;
 
 fn main() {
-    let matches = App::new("marksman")
+    let matches = App::new("arthur")
         .version("0.1.0")
         .author("Jamen Marz <me@jamen.dev>")
         .about("Make markdown articles into static web pages.")

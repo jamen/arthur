@@ -1,10 +1,20 @@
-# marksman
+# arthur
 
 Make markdown articles into static web pages.
 
+## Install
+
+You can install with cargo:
+
+```
+cargo install arthur
+```
+
+## Usage
+
 ```
 USAGE:
-    marksman [FLAGS] --input <input> --output <output> --template <template>
+    arthur [FLAGS] --input <input> --output <output> --template <template>
 
 FLAGS:
     -h, --help         Prints help information
@@ -19,7 +29,7 @@ OPTIONS:
     -t, --template <template>    HTML template.
 ```
 
-The setup is pretty straightforward. Just have a directory of markdown and images like:
+The setup is simple. Have a directory of markdown and images like:
 
 ```
 articles/
@@ -31,7 +41,7 @@ src/
     template.html
 ```
 
-It compiles to
+And it compiles to:
 
 ```
 out/
@@ -40,6 +50,12 @@ out/
     hello-world.html
     media/
         image.png
+```
+
+By using the command
+
+```
+arthur --input articles --template src/template.html --output out
 ```
 
 ### Metadata

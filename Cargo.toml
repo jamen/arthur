@@ -1,8 +1,13 @@
 [package]
-name = "marksman"
+name = "arthur"
 version = "0.1.0"
 authors = ["Jamen Marz <me@jamen.dev>"]
 edition = "2018"
+description = "Make markdown articles into static web pages."
+license = "Zlib"
+homepage = "https://github.com/jamen/arthur"
+repository = "https://github.com/jamen/arthur"
+documentation = "https://github.com/jamen/arthur#readme"
 
 [dependencies]
 clap = "2.33.0"
