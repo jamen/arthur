@@ -1,3 +1,7 @@
+# Archive Notice
+
+Discontinuing this. I ended up using [Zola](https://www.getzola.org/) instead. But this is pretty much finished if you find yourself curious.
+
 # arthur
 
 Make markdown articles into static web pages.
